@@ -1,0 +1,49 @@
+# Side chat bundle.
+#
+# Two rows:
+#  1. the Host half that supplies the side-chat prompt (behavior rules plus a
+#     bounded excerpt of the main conversation);
+#  2. the read-only Agent preset its sessions run. The preset deliberately
+#     composes no write or execute tool, so "no side effects on the workspace"
+#     is a capability fact, not a prompt promise.
+- insert:
+    - id: side-chat
+      name: '@dsh-local/side-chat'
+      config: {}
+    - id: preset-side-chat
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: side-chat
+        name: 侧边聊天（只读）
+        description: 与主对话并行、只读的侧边讨论会话。
+        order: 99
+        plugins:
+          - id: tool-fs
+            name: '@deepseek-ai/dsh-tool-fs'
+            config:
+              read: true
+              readImage: true
+              write: false
+              edit: false
+              applyPatch: false
+          - id: tool-fs-search
+            name: '@deepseek-ai/dsh-tool-fs-search'
+            config:
+              # Required by this package's schema (no default); keep the
+              # standard preset's value so over-cap glob results are not sampled.
+              sampleOverCapGlobResults: false
+          - id: tool-web
+            name: '@deepseek-ai/dsh-tool-web'
+            config:
+              fetch: true
+              searchTimeoutMs: 60000
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'

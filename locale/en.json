@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Side chat",
+    "description": "Discuss the current task with the model in the right sidebar: it reads the main conversation's recent user and assistant text as background and stays read-only, without interrupting the main conversation.",
+    "detail": "docs/DETAIL.md"
+  }
+}
