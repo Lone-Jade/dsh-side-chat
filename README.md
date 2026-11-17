@@ -47,7 +47,7 @@ plugin_manager install_bundle <absolute path to this folder>
 After the package is published:
 
 ```sh
-dsh plugin --profile <profile> add <npm-package-name>
+dsh plugin --profile <profile> add @lonejade/dsh-side-chat
 ```
 
 ## Usage

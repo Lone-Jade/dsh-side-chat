@@ -8,7 +8,7 @@
 #     is a capability fact, not a prompt promise.
 - insert:
     - id: side-chat
-      name: '@dsh-local/side-chat'
+      name: '@lonejade/dsh-side-chat'
       config: {}
     - id: preset-side-chat
       name: '@deepseek-ai/dsh-agent-preset'

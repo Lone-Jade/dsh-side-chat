@@ -20,9 +20,8 @@ catalog repository.
 
 ## 1. Pick your names
 
-The working copy is installed under the local-only name `@dsh-local/side-chat`.
-Before publishing, replace it with your own npm name (for example
-`@your-npm-name/dsh-side-chat`) in every place:
+The package is published as `@lonejade/dsh-side-chat`. If you rename it again,
+update every place:
 
 | File | Field |
 |---|---|
@@ -37,7 +36,7 @@ Then re-link the installed bundle so the profile follows the new name (ask the
 agent, or use Plugins → remove, then Add plugin):
 
 ```text
-plugin_manager remove_bundle @dsh-local/side-chat
+plugin_manager remove_bundle @lonejade/dsh-side-chat
 plugin_manager install_bundle <absolute path to this folder>
 ```
 

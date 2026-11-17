@@ -32,7 +32,7 @@ plugin_manager install_bundle <本目录绝对路径>
 包发布后：
 
 ```sh
-dsh plugin --profile <profile> add <npm 包名>
+dsh plugin --profile <profile> add @lonejade/dsh-side-chat
 ```
 
 ## 使用

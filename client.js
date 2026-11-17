@@ -22,13 +22,13 @@
  * from that id alone. Nothing here writes to the main Session.
  */
 window.__ModuleLoader__.load({
-  id: '@dsh-local/side-chat',
+  id: '@lonejade/dsh-side-chat',
   factory(require) {
     const React = require('react')
     const h = React.createElement
 
     /** This bundle's package name; also the tab type's implementation identity. */
-    const PACKAGE = '@dsh-local/side-chat'
+    const PACKAGE = '@lonejade/dsh-side-chat'
     /** Page type discriminator, prefixed with the package so it cannot collide. */
     const KIND = `${PACKAGE}:side-chat`
     /** Client locale namespace for every visible string. */
