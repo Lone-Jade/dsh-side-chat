@@ -259,7 +259,7 @@ window.__ModuleLoader__.load({
       )
     }
 
-    /** Panel stylesheet: one prefixed block the panel's own unmount removes. */
+    /** Panel stylesheet: plugin-owned, removed when the plugin unloads. */
     const STYLES = `
 .dshsc-root{display:flex;flex-direction:column;box-sizing:border-box;height:100%;min-height:0;color:var(--dsw-alias-label-primary);font-family:var(--dsh-font-family-text,inherit);font-size:var(--dsh-content-font-size-secondary,13px)}
 .dshsc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;padding:7px 12px;border-bottom:.5px solid var(--dsw-alias-border-l2)}
@@ -301,6 +301,18 @@ window.__ModuleLoader__.load({
         const stores = new Map()
 
         ctx.effect(() => ctx.locale.register(NAMESPACE, { zh: ZH, en: EN }), 'side-chat: copy')
+
+        // The header button and the quote control render outside the side-chat
+        // tab, so the stylesheet must exist whenever the plugin is active — not
+        // only while a tab body is mounted. Without it those controls fall back
+        // to the browser's native button chrome (a permanent "selected" box).
+        ctx.effect(() => {
+          const style = document.createElement('style')
+          style.setAttribute('data-dsh-side-chat', '')
+          style.textContent = STYLES
+          document.head.appendChild(style)
+          return () => { style.remove() }
+        }, 'side-chat: styles')
 
         /**
          * Create the store for one main conversation, or return the existing one.
@@ -465,7 +477,6 @@ window.__ModuleLoader__.load({
             body = h('div', { className: 'dshsc-notice' }, h('p', null, t('creating')))
           }
           return h('div', { className: 'dshsc-root', 'data-side-chat': '' },
-            h('style', { key: 'styles' }, STYLES),
             h('div', { className: 'dshsc-head' },
               h('span', { className: 'dshsc-status', title: t('status') }, t('status')),
               h('button', {

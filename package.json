@@ -1,6 +1,6 @@
 {
   "name": "@lonejade/dsh-side-chat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Right-sidebar side chat: a parallel, read-only conversation that explains the main conversation without interrupting it.",
   "license": "MIT",
   "author": "Lone-Jade",
