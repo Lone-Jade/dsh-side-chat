@@ -17,6 +17,9 @@
  * same prompt prefix.
  */
 
+/** `sessions` is the only Host service this half reads. */
+export const inject = ['sessions']
+
 /** `sidechat__<main>__<generation>`; main ids never contain `__`. */
 const SESSION_PATTERN = /^sidechat__(.+)__(\d+)$/
 
