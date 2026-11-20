@@ -7,6 +7,8 @@ chat any way to change your workspace.
 
 ![Side chat icon](assets/icon-180.png)
 
+> **Listed in the DSH plugin market:** [Lone-Jade/dsh-side-chat](https://awesome-dsh-plugin.com/p/Lone-Jade/dsh-side-chat/).
+
 ## Features
 
 - **A real conversation, not a popup.** The side chat is an ordinary Session
@@ -31,8 +33,8 @@ chat any way to change your workspace.
 
 ### From the plugin market
 
-Plugins → **Discover** → search for **Side chat** (available once the catalog
-entry is merged), then install.
+Plugins → **Discover** → search for **Side chat**, then install. The plugin is
+listed in the [DSH plugin market](https://awesome-dsh-plugin.com/p/Lone-Jade/dsh-side-chat/).
 
 ### From this directory
 

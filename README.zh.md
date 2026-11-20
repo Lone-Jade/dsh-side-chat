@@ -4,6 +4,8 @@
 
 ![侧边聊天图标](assets/icon-180.png)
 
+> **已收录于 DSH 插件市场：** [Lone-Jade/dsh-side-chat](https://awesome-dsh-plugin.com/p/Lone-Jade/dsh-side-chat/)。
+
 ## 特性
 
 - **真正的对话，不是弹窗。** 侧边聊天是右侧栏标签页里的一条普通 Session，直接复用原生输入框、流式输出、Markdown、停止、模型选择与复制。
@@ -17,7 +19,7 @@
 
 ### 从插件市场
 
-插件 → **发现（Discover）** → 搜索 **Side chat**（目录条目合并后可见），点击安装。
+插件 → **发现（Discover）** → 搜索 **Side chat**，点击安装。已收录于 [DSH 插件市场](https://awesome-dsh-plugin.com/p/Lone-Jade/dsh-side-chat/)。
 
 ### 从本目录
 
